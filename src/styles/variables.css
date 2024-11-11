@@ -1,0 +1,66 @@
+:root {
+  /* Main Colors - Light Mode */
+  --color-primary: #4285f4;
+  --color-secondary: #34a853;
+  --color-accent: #ea4335;
+  --color-highlight: #fbbc05;
+
+  /* Interface Colors - Light Mode */
+  --color-background: #ffffff;
+  --color-surface: #f8f9fa;
+  --color-border: #dadce0;
+  --color-shadow: rgba(32, 33, 36, 0.28);
+
+  /* Text Colors - Light Mode */
+  --color-text-primary: #202124;
+  --color-text-secondary: #5f6368;
+  --color-text-disabled: #9aa0a6;
+
+  /* Typography */
+  --font-heading: "Montserrat", sans-serif;
+  --font-body: "OpenSans", serif;
+
+  /* Font Sizes */
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 24px;
+  --text-xl: 32px;
+  --text-2xl: 48px;
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  /* Interface Elements */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 25px;
+  --box-shadow: 0 1px 6px var(--color-shadow);
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+}
+
+[data-theme="dark"] {
+  /* Main Colors - Dark Mode */
+  --color-primary: #8ab4f8;
+  --color-secondary: #81c995;
+  --color-accent: #f28b82;
+  --color-highlight: #fdd663;
+
+  /* Interface Colors - Dark Mode */
+  --color-background: #202124;
+  --color-surface: #303134;
+  --color-border: #5f6368;
+  --color-shadow: rgba(0, 0, 0, 0.5);
+
+  /* Text Colors - Dark Mode */
+  --color-text-primary: #e8eaed;
+  --color-text-secondary: #9aa0a6;
+  --color-text-disabled: #5f6368;
+}
