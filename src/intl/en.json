@@ -1,6 +1,7 @@
 {
   "global.logo": "TechHub Academy",
   "global.rights": "© 2024 TechHub Academy. All rights reserved.",
+  "global.locale": "Available in:",
 
   "header.cta": "Find a course",
   "header.madeByWho": "Who made this?",
