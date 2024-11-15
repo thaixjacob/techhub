@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import Button from "../Button";
 import { Dialog } from "@headlessui/react";
 import {
@@ -15,10 +14,23 @@ import {
   StyledDescription,
   ButtonContainer,
 } from "./Header.styles";
+import { useIntl } from "react-intl";
+import LocaleButton from "../LocaleButton";
 
-function Header() {
+interface HeaderProps {
+  locale: "en" | "es";
+  onLanguageChange: (locale: "en" | "es") => void;
+}
+
+function Header({ locale, onLanguageChange }: HeaderProps) {
+  const intl = useIntl();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  let [isOpenDialog, setIsOpenDialog] = useState(false);
+  const [isOpenDialog, setIsOpenDialog] = useState(false);
+
+  const handleLanguageChange = () => {
+    const newLocale = locale === "en" ? "es" : "en";
+    onLanguageChange(newLocale);
+  };
 
   return (
     <>
@@ -26,7 +38,7 @@ function Header() {
         <MobileMenuButton onClick={() => setIsMenuOpen(!isMenuOpen)}>
           ☰
         </MobileMenuButton>
-        <Logo href="/">TechHub Academy</Logo>
+        <Logo href="/">{intl.formatMessage({ id: "global.logo" })}</Logo>
         <NavContent isOpen={isMenuOpen}>
           <RightSection>
             <StyledLink
@@ -34,9 +46,15 @@ function Header() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Who made this?
+              {intl.formatMessage({ id: "header.madeByWho" })}
             </StyledLink>
-            <Button onClick={() => setIsOpenDialog(true)}>Find a course</Button>
+            <LocaleButton
+              onLanguageChange={handleLanguageChange}
+              locale={locale}
+            />
+            <Button onClick={() => setIsOpenDialog(true)}>
+              {intl.formatMessage({ id: "header.cta" })}
+            </Button>
           </RightSection>
         </NavContent>
       </HeaderContainer>

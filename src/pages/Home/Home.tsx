@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { animationSequences } from "./constants";
+import { useAnimationSequences } from "./constants";
 import {
   HomePageContainer,
   SchoolName,
@@ -15,25 +15,29 @@ import {
 } from "./Home.styles";
 import Button from "../../shared/Button";
 import { Dialog } from "@headlessui/react";
+import { useIntl } from "react-intl";
 
 export default function Home() {
   let [isOpen, setIsOpen] = useState(false);
+  const intl = useIntl();
 
   return (
     <>
       <HomePageContainer>
-        <SchoolName>TechHub Academy</SchoolName>
+        <SchoolName>{intl.formatMessage({ id: "global.logo" })}</SchoolName>
         <SearchContainer>
           <SearchBar>
             <SearchIconImage src="/assets/search-icon.svg" alt="Search Icon" />
             <AnimatedText
-              sequence={animationSequences}
+              sequence={useAnimationSequences()}
               speed={50}
               repeat={Infinity}
             />
           </SearchBar>
         </SearchContainer>
-        <Button onClick={() => setIsOpen(true)}>Search</Button>
+        <Button onClick={() => setIsOpen(true)}>
+          {intl.formatMessage({ id: "page.home.cta" })}
+        </Button>
         <Dialog
           as="form"
           open={isOpen}

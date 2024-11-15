@@ -1,11 +1,16 @@
-// constants.ts
-export const animationSequences = [
-  "How to become a software developer?",
-  1000,
-  "How to become a data engineer?",
-  1000,
-  "How to become a UX/UI designer?",
-  1000,
-  "How to become a data analyst?",
-  1000,
-];
+import { useIntl } from "react-intl";
+
+export const useAnimationSequences = () => {
+  const intl = useIntl();
+
+  return [
+    intl.formatMessage({ id: "page.home.sequence.developer" }),
+    1000,
+    intl.formatMessage({ id: "page.home.sequence.dataEngineer" }),
+    1000,
+    intl.formatMessage({ id: "page.home.sequence.uxUiDesigner" }),
+    1000,
+    intl.formatMessage({ id: "page.home.sequence.dataAnalyst" }),
+    1000,
+  ];
+};
