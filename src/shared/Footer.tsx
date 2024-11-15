@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useIntl } from "react-intl";
 
 const FooterContainer = styled.footer`
   background-color: var(--color-background);
@@ -50,10 +51,12 @@ const FooterLink = styled.a`
 `;
 
 function Footer() {
+  const intl = useIntl();
+
   return (
     <FooterContainer>
       <FooterContent>
-        <Copyright>© 2024 TechHub Academy. All rights reserved.</Copyright>
+        <Copyright>{intl.formatMessage({ id: "global.rights" })}</Copyright>
         <FooterLinks>
           <FooterLink
             href="https://www.linkedin.com/in/thaisjacob/"

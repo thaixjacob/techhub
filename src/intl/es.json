@@ -1,0 +1,15 @@
+{
+  "global.logo": "TechHub Academy",
+  "global.rights": "© 2024 TechHub Academy. Todos los derechos reservados.",
+
+  "header.cta": "Encontrar un curso",
+  "header.madeByWho": "¿Quién hizo esto?",
+  "header.languages.english": "Inglés",
+  "header.languages.spanish": "Español",
+
+  "page.home.sequence.developer": "¿Cómo convertirse en desarrollador de software?",
+  "page.home.sequence.dataEngineer": "¿Cómo convertirse en ingeniero de datos?",
+  "page.home.sequence.uxUiDesigner": "¿Cómo convertirse en diseñador UX/UI?",
+  "page.home.sequence.dataAnalyst": "¿Cómo convertirse en analista de datos?",
+  "page.home.cta": "Buscar"
+}

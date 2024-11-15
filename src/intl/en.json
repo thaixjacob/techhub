@@ -1,0 +1,15 @@
+{
+  "global.logo": "TechHub Academy",
+  "global.rights": "© 2024 TechHub Academy. All rights reserved.",
+
+  "header.cta": "Find a course",
+  "header.madeByWho": "Who made this?",
+  "header.languages.english": "English",
+  "header.languages.spanish": "Spanish",
+
+  "page.home.sequence.developer": "How to become a software developer?",
+  "page.home.sequence.dataEngineer": "How to become a data engineer?",
+  "page.home.sequence.uxUiDesigner": "How to become a UX/UI designer?",
+  "page.home.sequence.dataAnalyst": "How to become a data analyst?",
+  "page.home.cta": "Search"
+}

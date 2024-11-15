@@ -15,10 +15,12 @@ import {
   StyledDescription,
   ButtonContainer,
 } from "./Header.styles";
+import { useIntl } from "react-intl";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   let [isOpenDialog, setIsOpenDialog] = useState(false);
+  const intl = useIntl();
 
   return (
     <>
@@ -26,7 +28,7 @@ function Header() {
         <MobileMenuButton onClick={() => setIsMenuOpen(!isMenuOpen)}>
           ☰
         </MobileMenuButton>
-        <Logo href="/">TechHub Academy</Logo>
+        <Logo href="/">{intl.formatMessage({ id: "global.logo" })}</Logo>
         <NavContent isOpen={isMenuOpen}>
           <RightSection>
             <StyledLink
@@ -34,9 +36,11 @@ function Header() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Who made this?
+              {intl.formatMessage({ id: "header.madeByWho" })}
             </StyledLink>
-            <Button onClick={() => setIsOpenDialog(true)}>Find a course</Button>
+            <Button onClick={() => setIsOpenDialog(true)}>
+              {intl.formatMessage({ id: "header.cta" })}
+            </Button>
           </RightSection>
         </NavContent>
       </HeaderContainer>
