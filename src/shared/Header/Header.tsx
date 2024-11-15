@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import Button from "../Button";
 import { Dialog } from "@headlessui/react";
 import {
@@ -16,11 +15,22 @@ import {
   ButtonContainer,
 } from "./Header.styles";
 import { useIntl } from "react-intl";
+import LocaleButton from "../LocaleButton";
 
-function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  let [isOpenDialog, setIsOpenDialog] = useState(false);
+interface HeaderProps {
+  locale: "en" | "es";
+  onLanguageChange: (locale: "en" | "es") => void;
+}
+
+function Header({ locale, onLanguageChange }: HeaderProps) {
   const intl = useIntl();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isOpenDialog, setIsOpenDialog] = useState(false);
+
+  const handleLanguageChange = () => {
+    const newLocale = locale === "en" ? "es" : "en";
+    onLanguageChange(newLocale);
+  };
 
   return (
     <>
@@ -38,6 +48,10 @@ function Header() {
             >
               {intl.formatMessage({ id: "header.madeByWho" })}
             </StyledLink>
+            <LocaleButton
+              onLanguageChange={handleLanguageChange}
+              locale={locale}
+            />
             <Button onClick={() => setIsOpenDialog(true)}>
               {intl.formatMessage({ id: "header.cta" })}
             </Button>
