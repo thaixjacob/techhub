@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { TypeAnimation } from "react-type-animation";
-import { Description } from "@headlessui/react";
-import { DialogPanel, DialogTitle } from "@headlessui/react";
+import { Description, DialogPanel, DialogTitle } from "@headlessui/react";
 
 export const HomePageContainer = styled.div`
   display: flex;
