@@ -16,7 +16,10 @@ interface FooterProps {
   onLanguageChange: (locale: "en" | "es") => void;
 }
 
-function Footer({ locale, onLanguageChange }: FooterProps) {
+const Footer: React.FC<Readonly<FooterProps>> = ({
+  locale,
+  onLanguageChange,
+}) => {
   const intl = useIntl();
 
   const handleLanguageChange = () => {
@@ -61,6 +64,6 @@ function Footer({ locale, onLanguageChange }: FooterProps) {
       </FooterContent>
     </FooterContainer>
   );
-}
+};
 
 export default Footer;
