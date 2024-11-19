@@ -22,7 +22,10 @@ interface HeaderProps {
   onLanguageChange: (locale: "en" | "es") => void;
 }
 
-function Header({ locale, onLanguageChange }: HeaderProps) {
+const Header: React.FC<Readonly<HeaderProps>> = ({
+  locale,
+  onLanguageChange,
+}) => {
   const intl = useIntl();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isOpenDialog, setIsOpenDialog] = useState(false);
@@ -78,6 +81,6 @@ function Header({ locale, onLanguageChange }: HeaderProps) {
       </Dialog>
     </>
   );
-}
+};
 
 export default Header;
